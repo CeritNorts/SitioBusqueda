@@ -9,43 +9,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; 
-  padding-top: 40px; 
+  /* CAMBIO CLAVE: Centrado total en escritorio */
+  justify-content: center; 
   color: white;
   text-align: center;
+  padding: 20px;
 }
 
 .anim-box {
   max-width: 500px; 
   width: 100%;
-  margin-top: -20px; 
-}
-
-.glitch {
-  color: #ff4081;
-  font-size: 2.5rem; 
-  margin-top: -40px; 
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+  /* Eliminamos márgenes negativos que pueden causar saltos visuales */
 }
 
 ng-lottie {
   display: block;
   width: 100%;
-  height: 300px;
-  margin-bottom: 0;
+  height: 5px; /* Un poco más grande en PC para que luzca */
+  max-width: 100%;
+}
+
+.glitch {
+  color: #ff4081;
+  font-size: 3rem; 
+  margin-top: 10px; 
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
 }
 
 .content p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
   opacity: 0.8;
 }
 
 .btn-neon {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 10px 25px;
+  padding: 12px 30px;
   border: 2px solid #00e5ff;
   color: #00e5ff;
   text-decoration: none;
@@ -60,26 +60,29 @@ ng-lottie {
   box-shadow: 0 0 20px #00e5ff;
 }
 
+/* Forzar que el SVG de Lottie sea responsivo */
 ::ng-deep svg {
   width: 100% !important;
   height: 100% !important;
 }
 
-.error-wrapper {
-  padding: 20px;
-  text-align: center;
-}
-
-ng-lottie {
-  max-width: 100%;
-  height: auto !important; /* Deja que el SVG escale solo */
-}
-
-@media (max-width: 600px) {
-  .anim-box {
-    height: 300px; /* Altura controlada para móvil */
+/* --- AJUSTES PARA MÓVIL --- */
+@media (max-width: 768px) {
+  .error-wrapper {
+    /* En móvil sí lo mandamos un poco más arriba para que el teclado o el navegador no estorben */
+    justify-content: flex-start;
+    padding-top: 60px;
   }
+
+  ng-lottie {
+    height: 280px; /* Más pequeño en celular */
+  }
+
   .glitch {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .content p {
+    font-size: 1rem;
   }
 }
