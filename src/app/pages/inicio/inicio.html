@@ -1,0 +1,83 @@
+<section class="hero-unidad">
+    <div class="hero-overlay">
+        <div class="hero-texto">
+            <h1>Estructura y búsquedas en sitios web</h1>
+            <p>Fundamentos para el diseño de sitios web bien estructurados y usables.</p>
+            <p>Conceptos de Angular, rutas, promesas y arquitectura de información.</p>
+        </div>
+    </div>
+</section>
+
+<section class="plantillas">
+    <h2>Tipos de Plantillas</h2>
+    <div class="cards">
+        <div class="card" [class.active]="active === 'lineal'" (click)="select('lineal')">
+            <img src="assets/img/kirby-pink.png" alt="kirby-pink">
+            <h3>Lineal</h3>
+
+            @if (active === 'lineal') {
+            <div class="card-content">
+                <p>Navegación secuencial paso a paso...</p>
+            </div>
+            }
+        </div>
+
+        <div class="card" [class.active]="active === 'jerarquica'" (click)="select('jerarquica')">
+            <img src="assets/img/kirby-nigga.avif" alt="kirby-powerful">
+            <h3>Jerárquica</h3>
+            @if (active === 'jerarquica') {
+            <div class="card-content">
+                <p>Organización en niveles. Ideal para sitios corporativos y e-commerce.</p>
+                <ul>
+                    <li><strong>Ventaja:</strong> Escalable</li>
+                    <li><strong>Riesgo:</strong> Profundidad excesiva</li>
+                </ul>
+            </div>
+            }
+        </div>
+
+        <div class="card" [class.active]="active === 'red'" (click)="select('red')">
+            <img src="assets/img/kirby-powerful.png" alt="kirby-negga">
+            <h3>Estructura en Red</h3>
+            @if (active === 'red') {
+            <div class="card-content">
+                <p>Enlaces múltiples que permiten exploración libre y descubrimiento.</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="search-info">
+    <div class="accordion">
+        <div class="accordion-item">
+            <button class="accordion-header" (click)="toggleAccordion(1)" [class.active-header]="openAccordion === 1">
+                ¿Por qué son importantes las búsquedas?
+                <span class="icon">{{ openAccordion === 1 ? '−' : '+' }}</span>
+            </button>
+            @if (openAccordion === 1) {
+            <div class="accordion-body">
+                <p>Mejoran la experiencia del usuario y reducen la frustración al hallar datos rápido.</p>
+            </div>
+            }
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header" (click)="toggleAccordion(2)" [class.active-header]="openAccordion === 2">
+                Componentes principales
+                <span class="icon">{{ openAccordion === 2 ? '−' : '+' }}</span>
+            </button>
+            @if (openAccordion === 2) {
+            <div class="accordion-body">
+                <ul>
+                    <li>Campo de texto y botón</li>
+                    <li>Autocompletado y sugerencias</li>
+                </ul>
+            </div>
+            }
+        </div>
+
+    </div>
+</section>
+
+

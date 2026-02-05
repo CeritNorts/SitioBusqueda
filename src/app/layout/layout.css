@@ -1,0 +1,171 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.75rem 1.5rem;
+
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu a {
+  color: #eaeaea;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.menu a.active {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.topbar form {
+  display: flex;
+  align-items: center;
+}
+
+.topbar input {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+}
+
+.topbar input::placeholder {
+  color: #ddd;
+}
+
+.topbar input:focus {
+  outline: none;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.topbar button {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: #fff;
+}
+
+.topbar button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+
+.footer {
+  /* Bajamos la opacidad a 0.55 para que haga juego con tu topbar */
+  background: rgba(20, 20, 20, 0.55); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  color: #ffffff;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 97.3.1%;
+  
+  /* Esto asegura que no se mueva de su lugar */
+  margin-top: auto; 
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Esto permite que en pantallas chicas los elementos se apilen */
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px; /* Un poco más pequeño para mejorar la adaptabilidad */
+  text-align: center;
+}
+
+.footer-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #ff4081; /* El rosa Kirby que resalta */
+  font-weight: 600;
+}
+
+.footer-section p {
+  font-size: 0.85rem;
+  color: #eaeaea;
+}
+
+.footer-links {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #888;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon-dot {
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-dot:hover {
+  background: #ff4081;
+  transform: translateY(-3px); /* Pequeño salto al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 10px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-section {
+    min-width: 100%;
+  }
+}
+

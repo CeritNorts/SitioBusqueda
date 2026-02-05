@@ -1,0 +1,90 @@
+.bc-container {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bc-header {
+  text-align: left;
+  margin-bottom: 40px;
+  border-left: 5px solid #00e5ff;
+  padding-left: 20px;
+}
+
+.bc-header h1 {
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.bc-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Contenedor de cada ejemplo */
+.bc-item {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bc-label {
+  display: block;
+  color: #ff4081; /* Rosa para el título del ejemplo */
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* Estilos comunes de los ejemplos */
+.bc-example {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.bc-example a {
+  color: #00e5ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.bc-example a:hover {
+  text-decoration: underline;
+}
+
+.bc-example .current {
+  color: #888;
+}
+
+/* Estilo 3: Pills */
+.pills .pill {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.pills .current {
+  background: #ff4081;
+  color: white;
+}
+
+/* Estilo 4: Arrows */
+.arrow .step {
+  padding: 8px 20px;
+  background: #333;
+  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
+}
+
+.arrow .active {
+  background: #00e5ff;
+  color: #000;
+  font-weight: bold;
+}
