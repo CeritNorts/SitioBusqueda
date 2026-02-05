@@ -1,18 +1,15 @@
+/* --- TOPBAR (GENERAL) --- */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0.75rem 1.5rem;
-
   background: rgba(20, 20, 20, 0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -20,6 +17,15 @@
   font-size: 1.2rem;
   font-weight: 600;
   color: #ffffff;
+}
+
+/* Contenedor que agrupa Menú y Buscador */
+.nav-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: space-between;
+  margin-left: 20rem;
 }
 
 .menu {
@@ -36,62 +42,110 @@
   transition: background 0.25s ease, color 0.25s ease;
 }
 
-.menu a:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-}
-
-.menu a.active {
+.menu a:hover, .menu a.active {
   background: rgba(255, 255, 255, 0.22);
   color: #ffffff;
-  font-weight: 500;
 }
 
-.topbar form {
+/* Buscador rápido */
+.search-form {
   display: flex;
   align-items: center;
+  margin-left: 1.5rem;
 }
 
-.topbar input {
+.search-form input {
   background: rgba(255, 255, 255, 0.15);
   border: none;
   color: #fff;
+  border-radius: 4px 0 0 4px;
 }
 
-.topbar input::placeholder {
-  color: #ddd;
-}
+.search-form input::placeholder { color: #ddd; }
 
-.topbar input:focus {
-  outline: none;
-  box-shadow: none;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.topbar button {
+.search-form button {
   background: rgba(255, 255, 255, 0.25);
   border: none;
   color: #fff;
+  border-radius: 0 4px 4px 0;
 }
 
-.topbar button:hover {
-  background: rgba(255, 255, 255, 0.4);
+/* --- BOTÓN HAMBURGUESA --- */
+.hamburger {
+  display: none; /* Oculto en Desktop */
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
 }
 
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
 
+/* --- RESPONSIVO (MÓVIL) --- */
+@media (max-width: 992px) {
+  .hamburger {
+    display: flex; /* Aparece el botón */
+  }
+
+  .nav-container {
+    display: none; /* Se oculta por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.98); /* Más oscuro para legibilidad */
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    margin-left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-container.show {
+    display: flex; /* Se muestra al activar toggleMenu() */
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .menu a {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .search-form {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .search-form input {
+    width: 100%;
+  }
+}
+
+/* --- FOOTER --- */
 .footer {
-  /* Bajamos la opacidad a 0.55 para que haga juego con tu topbar */
-  background: rgba(20, 20, 20, 0.55); 
+  background: rgba(20, 20, 20, 0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  
   color: #ffffff;
   padding: 40px 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  width: 97.3.1%;
-  
-  /* Esto asegura que no se mueva de su lugar */
-  margin-top: auto; 
+  margin-top: auto;
 }
 
 .footer-content {
@@ -100,26 +154,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Esto permite que en pantallas chicas los elementos se apilen */
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .footer-section {
   flex: 1;
-  min-width: 200px; /* Un poco más pequeño para mejorar la adaptabilidad */
+  min-width: 200px;
   text-align: center;
 }
 
 .footer-section h3 {
   font-size: 1.1rem;
   margin-bottom: 10px;
-  color: #ff4081; /* El rosa Kirby que resalta */
+  color: #ff4081;
   font-weight: 600;
-}
-
-.footer-section p {
-  font-size: 0.85rem;
-  color: #eaeaea;
 }
 
 .footer-links {
@@ -144,50 +193,16 @@
   border-radius: 50%;
   transition: all 0.25s ease;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .icon-dot:hover {
   background: #ff4081;
-  transform: translateY(-3px); /* Pequeño salto al pasar el mouse */
+  transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
-  .footer {
-    padding: 30px 10px;
-  }
-  
   .footer-content {
     flex-direction: column;
     gap: 30px;
-  }
-  
-  .footer-section {
-    min-width: 100%;
-  }
-}
-
-
-
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  flex-wrap: wrap; /* Permite que los items bajen si no caben */
-}
-
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none; /* Aquí podrías implementar un menú hamburguesa luego */
-  }
-  
-  .mobile-menu-active .navbar-links {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
   }
 }
