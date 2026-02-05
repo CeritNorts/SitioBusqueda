@@ -64,3 +64,22 @@ ng-lottie {
   width: 100% !important;
   height: 100% !important;
 }
+
+.error-wrapper {
+  padding: 20px;
+  text-align: center;
+}
+
+ng-lottie {
+  max-width: 100%;
+  height: auto !important; /* Deja que el SVG escale solo */
+}
+
+@media (max-width: 600px) {
+  .anim-box {
+    height: 300px; /* Altura controlada para móvil */
+  }
+  .glitch {
+    font-size: 1.5rem;
+  }
+}

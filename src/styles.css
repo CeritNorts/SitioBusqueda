@@ -1,122 +1,3 @@
-/*:root {
-  --mc-green: #5dbb63;
-  --mc-dark-green: #3a7d44;
-  --mc-brown: #8b5a2b;
-  --mc-dark-brown: #5c3a1e;
-  --mc-stone: #b0b0b0;
-  --mc-dark-stone: #6e6e6e;
-  --mc-black: #1e1e1e;
-  --mc-white: #f5f5f5;
-}
-
-
-body {
-  font-family: 'Press Start 2P', monospace;
-
-  background-color: #7ec850;
-  background-image:
-    linear-gradient(45deg, rgba(0,0,0,.05) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(0,0,0,.05) 25%, transparent 25%);
-  background-size: 32px 32px;
-
-  margin: 0;
-  color: var(--mc-black);
-}
-
-
-
-.topbar {
-  background: linear-gradient(
-    to bottom,
-    var(--mc-brown),
-    var(--mc-dark-brown)
-  );
-  border-bottom: 4px solid #000;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.brand {
-  color: white;
-  font-size: 14px;
-  text-shadow: 2px 2px #000;
-}
-
-
-.menu a {
-  background: var(--mc-green);
-  color: #000;
-  padding: 6px 10px;
-  margin-right: 6px;
-  border: 2px solid #000;
-  text-decoration: none;
-  box-shadow: 2px 2px #000;
-}
-
-.menu a:hover {
-  background: var(--mc-dark-green);
-}
-
-.menu a.active {
-  background: #3fa34d;
-  box-shadow: inset 2px 2px #000;
-}
-
-
-.content {
-  padding: 16px;
-}
-
-.card {
-  background: var(--mc-stone);
-  border: 3px solid #000;
-  box-shadow: 4px 4px #000;
-  margin-bottom: 16px;
-}
-
-
-.breadcrumb a {
-  color: #000;
-  text-decoration: none;
-  background: #c2b280;
-  padding: 4px 6px;
-  border: 2px solid #000;
-  margin-right: 4px;
-}
-
-.breadcrumb .current {
-  background: #e0d7b3;
-  border: 2px solid #000;
-  padding: 4px 6px;
-}
-
-
-button {
-  background: #c6c6c6;
-  border: 2px solid #000;
-  box-shadow: 2px 2px #000;
-  padding: 6px 10px;
-  cursor: pointer;
-}
-
-button:active {
-  box-shadow: inset 2px 2px #000;
-}
-
-
-.footer {
-  background: var(--mc-dark-stone);
-  color: white;
-  border-top: 4px solid #000;
-  text-align: center;
-  padding: 8px;
-}*/
-
-
-
-
 html, body {
   margin: 0;
   padding: 0;
@@ -135,4 +16,28 @@ body {
 app-root {
   min-height: 100vh;
   display: block;
+}
+
+
+/*jajaajajajajjajajajajjajaajajajajja*/
+
+/* Asegura que nada se salga del ancho de la pantalla */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Las imágenes nunca serán más anchas que la pantalla */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedor responsivo genérico para tus páginas */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }

@@ -166,3 +166,37 @@
     font-size: 1.8rem;
   }
 }
+
+
+/* --- RESPONSIVO INICIO --- */
+@media (max-width: 768px) {
+  .hero-unidad {
+    height: 250px; /* Reducimos altura */
+  }
+
+  .hero-texto h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-texto p {
+    font-size: 1rem;
+    display: none; /* Ocultamos el segundo párrafo en móvil para ahorrar espacio */
+  }
+  .hero-texto p:first-of-type {
+    display: block; /* Solo dejamos el primero */
+  }
+
+  .plantillas {
+    padding: 40px 15px; /* Menos margen lateral */
+  }
+
+  .card {
+    width: 100%; /* Las tarjetas ocupan todo el ancho disponible */
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .cards {
+    gap: 15px;
+  }
+}

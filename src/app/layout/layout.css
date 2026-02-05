@@ -169,3 +169,25 @@
   }
 }
 
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap; /* Permite que los items bajen si no caben */
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none; /* Aquí podrías implementar un menú hamburguesa luego */
+  }
+  
+  .mobile-menu-active .navbar-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

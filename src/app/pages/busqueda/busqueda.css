@@ -91,3 +91,51 @@ select.form-select {
     margin: 30px 16px;
   }
 }
+
+
+/* --- RESPONSIVO BÚSQUEDA --- */
+@media (max-width: 576px) {
+  .container {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  /* Rompemos el input-group para que los botones bajen */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-group input {
+    border-radius: 15px !important; /* Bordes redondeados parejos */
+    width: 100%;
+  }
+
+  .input-group .btn-primary {
+    border-radius: 15px !important;
+    width: 100%;
+    padding: 12px;
+  }
+
+  .input-group .btn-outline-secondary {
+    border-radius: 15px !important;
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  /* Los filtros avanzados uno debajo del otro */
+  .row.g-3 > div {
+    margin-bottom: 10px;
+  }
+  
+  /* Los resultados con más espacio para el texto */
+  .list-group-item .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  
+  .badge {
+    margin-top: 8px;
+  }
+}
